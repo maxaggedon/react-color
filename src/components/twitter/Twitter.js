@@ -138,12 +138,16 @@ export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
             />
           )
         }) }
+        {editableInput && (
+          <>
         <div style={ styles.hash }>#</div>
         <EditableInput
           style={{ input: styles.input }}
           value={ hex.replace('#', '') }
           onChange={ handleChange }
         />
+          </>
+        )}
         <div style={ styles.clear } />
       </div>
     </div>
@@ -154,7 +158,8 @@ Twitter.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   triangle: PropTypes.oneOf(['hide', 'top-left', 'top-right']),
   colors: PropTypes.arrayOf(PropTypes.string),
-}
+  editableInput: PropTypes.bool,
+};
 
 Twitter.defaultProps = {
   width: 276,
