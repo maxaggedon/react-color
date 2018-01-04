@@ -139,14 +139,14 @@ export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
           )
         }) }
         {editableInput && (
-          <>
-        <div style={ styles.hash }>#</div>
-        <EditableInput
-          style={{ input: styles.input }}
-          value={ hex.replace('#', '') }
-          onChange={ handleChange }
-        />
-          </>
+          <div>
+            <div style={ styles.hash }>#</div>
+            <EditableInput
+              style={{ input: styles.input }}
+              value={ hex.replace('#', '') }
+              onChange={ handleChange }
+            />
+          </div>
         )}
         <div style={ styles.clear } />
       </div>
